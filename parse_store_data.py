@@ -20,6 +20,12 @@ for html_file in files:
 		
 		# now that we found the table that contains the address
 		# grab the table rows
+		
+		# the thing to keep in mind from here on out
+		# is that each findAll command returns beautifulsoup objects
+		
+		# read the above comment again, its important. i'll wait.
+		
 		rows = address_table[0].findAll('tr')
 		
 		# this part takes trial and error
