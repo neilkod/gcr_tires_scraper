@@ -28,7 +28,13 @@ done < $STATES_FILE
 grep -o 'viewstore.php?id=[0-9]*' states/*.html |awk -F= '{print $2}' > $STORE_IDS_FILE
 
 # now that we have the list of store ids, download the store data
-# from the site
+# from the site and save it in the stores directory.
+# stores are numbered by id and the numbers don't seem to follow
+# any easily-identifiable pattern. There are 200+ stores and the 
+# ids range from 200 to 91000. yes, really.
+# we'll iterate through the ids that we saved in the above step and then
+# download the page's html to the stores directory
+
 while read p; do
   store_page=$STORE_URL$p
   echo $store_page
