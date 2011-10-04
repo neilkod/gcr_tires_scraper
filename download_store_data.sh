@@ -41,3 +41,6 @@ while read p; do
   curl -s $store_page > stores/store_$p.html
 done < $STORE_IDS_FILE
 
+# we've downloaded the individual files for the stores.
+# clean up what we don't need
+rm -rf states $STATES_FILE $STORE_IDS_FILE
